@@ -24,7 +24,6 @@ public class PlayerData
         }
     }
     public bool CanPalyMiniGame { get {
-            return true;
             TimeSpan d = DateTime.Now - _lastRewardTime;
             if (d.Days > 0)
             {

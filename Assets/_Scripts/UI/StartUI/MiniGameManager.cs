@@ -8,6 +8,7 @@ public class MiniGameManager : MonoBehaviour
     [SerializeField] private GameObject _getCoinWindow;
     [SerializeField] private List<GameObject> _getCoinSprites;
     [SerializeField] private Animator _shuffleAnimator;
+    [SerializeField] private AnimationEventListener _shuffleListener;
     [SerializeField] private List<Button> _cardButtons;
     [SerializeField] private List<MiniGameCard> _cards;
     [SerializeField] private List<int> _coinsAmounts;
@@ -20,6 +21,7 @@ public class MiniGameManager : MonoBehaviour
             x.interactable = false;
             x.gameObject.SetActive(false);
         });
+        _shuffleListener.AnimationEventAction += AnimationEventHandler;
     }
     public void SetCanPlay(bool canPlay)
     {
